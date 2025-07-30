@@ -12,16 +12,35 @@
     }
 
     body {
-      background: 
-        linear-gradient(rgba(10, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
-        url('IMG_20250726_182824_212.jpg') no-repeat center center fixed;
-      background-size: cover;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       height: 100vh;
       color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bg-img {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(50%) contrast(110%);
+    }
+
+    .overlay {
+      background: linear-gradient(rgba(10, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
     }
 
     .header {
@@ -65,6 +84,10 @@
   </style>
 </head>
 <body>
+  <!-- Background image -->
+  <img class="bg-img" src="IMG_20250726_182824_212.jpg" alt="Background" />
+  <div class="overlay"></div>
+
   <div class="header">
     <h1 class="logo">𝒗𝒐𝒊𝒅𝒉𝒘𝒂</h1>
     <input type="text" class="search-box" placeholder="Search manhwas...">
